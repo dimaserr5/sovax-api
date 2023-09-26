@@ -18,4 +18,6 @@ Route::middleware([
     'guest'
 ])->controller(\App\Http\Controllers\Api\User\Guest\RegisterController::class)->prefix('guest')->group(function () {
     Route::post('register', 'action')->name('api.user.register.action');
+})->controller(\App\Http\Controllers\Api\User\Guest\LoginController::class)->prefix('guest')->group(function () {
+    Route::post('login', 'action')->name('api.user.login.action');
 });
