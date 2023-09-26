@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware([
     'guest'
-])->controller('')->prefix('api')->group(function () {
-    Route::post('register');
+])->controller(\App\Http\Controllers\Api\User\Guest\RegisterController::class)->prefix('guest')->group(function () {
+    Route::post('register', 'action')->name('api.user.register.action');
 });
